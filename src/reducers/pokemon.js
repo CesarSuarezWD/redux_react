@@ -21,7 +21,7 @@ export const pokemonReducer = (state = initialState, action) => {
         (elem) => elem.id === action.payload.pokemonId
       );
       if (currentPokemonIndex >= 0) {
-        newPokemonList[currentPokemonIndex].favorite = true;
+        newPokemonList[currentPokemonIndex].favorite = !newPokemonList[currentPokemonIndex].favorite;
       }
 
       return { ...state, list: newPokemonList };
